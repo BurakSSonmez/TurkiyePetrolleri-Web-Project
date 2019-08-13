@@ -1,0 +1,106 @@
+﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="main.master.cs" Inherits="TurkıyePetrolleri.main1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Türkiye Petrolleri</title>
+
+    <link href="/style.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div id="wrapper">
+                
+            <header>
+
+                <div class="logo">
+                    <img src="images/logo.png " />
+                </div>
+
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/">Ana Sayfa</a>
+                        </li>
+                         <li>
+                            <a href="oneriGonder.aspx">Öneri Gönder</a>
+                        </li> 
+                        <li>
+                            <a href="iletisim.aspx">İletişim</a>
+                        </li>                           
+                    </ul>
+                </nav>
+
+            </header>
+
+            <div class="banner">
+                TPAO İnovasyon Platformu
+
+            </div>
+
+            <div class="sol-taraf">
+
+                <div class="kullanici-girisi">
+                    <asp:Panel ID="pnlGiris" runat="server">
+
+                    <div class="ust">
+                        Giriş Yap
+
+                    </div>
+
+                    <div class="alt">
+                      
+                        <div class="Kullanici">
+                        <span>Kullanıcı Adı</span>
+                        <asp:TextBox ID="txtKullaniciAdi" CssClass="textbox" runat="server" />
+                        </div>
+
+                        <div class="sifre">
+                        <span>Şifre</span>
+                        <asp:TextBox ID="txtSifre" CssClass="textbox"  runat="server" TextMode="Password" />
+                        </div>
+
+                        <asp:Button ID="btnGiris" CssClass="btnGiris" Text="Giriş" runat="server" OnClick="btnGiris_Click" />
+                        <a href="Kaydol.aspx" class="btnKayit">Kayıt Ol</a>
+                        <asp:Label ID="lblSonuc" Text="" runat="server" />
+                    </div>
+                    </asp:Panel>
+
+                    <asp:Panel ID="pnlKullanici" runat="server" CssClass="pnlKullanici">
+                        Hoşgeldiniz, <asp:Label ID="lblKullaniciAdi" Text="" runat="server"></asp:Label>
+                        <br />
+                        <asp:Button ID="btnCikis" Text="Çıkış" runat="server" OnClick="btnCikis_Click" CssClass="kullaniciCikisi" />
+                    </asp:Panel>
+                </div>
+
+
+
+                <div class="duyuru">
+
+                </div>
+            </div>
+
+            <div class="icerik">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder> 
+
+            </div>
+
+            <footer>
+                Türkiye Petrolleri adına Burak Sezai SÖNMEZ tarafından hazırlanmıştır. © 2018
+            </footer>
+
+          </div> 
+    
+        
+    
+    </form>
+</body>
+</html>
